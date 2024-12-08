@@ -1,4 +1,4 @@
-# Manuel Build Kernel
+# Build Kernel Manually
 
 Build Toolchain Download link:
 
