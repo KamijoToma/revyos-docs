@@ -37,6 +37,14 @@ plugins:
           手动编译内核: Manuel Build Kernel
           如何启用优化GCC: Enable Optimization GCC
           桌面使用: desktop
+          Debian 相关: Debian-Related
+          Debian 软件包构建流程: Debian Package Building Process
+          编译器相关说明: Compiler-related Instructions
+          其他通用构建: Other General Builds
+          T-Head QEMU 编译流程: T-Head QEMU Compilation Process
+          gcc 编译软件说明: How to build programs using gcc
+          适配文档: Porting Docs
+          系统使用: System Usage
            
 nav:
   - 主页: index.md
@@ -48,7 +56,7 @@ nav:
     - 其他通用构建: 
       - T-Head QEMU 编译流程: build/other/thead-qemu编译流程.md
       - 手动编译内核: build/other/manuel_build_kernel.md
-      - gcc 编译软件软件说明: build/other/gcc编译软件说明.md
+      - gcc 编译软件说明: build/other/gcc编译软件说明.md
   - 适配文档:
     - GStreamer 播放器适配: adaptation/GStreamer播放器适配.md
     - GStreamer pipeline: adaptation/GStreamer-pipeline-example-with-thead-omxil-lib.md
