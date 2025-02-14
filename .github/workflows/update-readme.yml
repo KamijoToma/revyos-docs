@@ -1,0 +1,40 @@
+name: Update README
+
+on:
+  push:
+    paths:
+      - 'README.md'
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout revyos/revyos repository
+      uses: actions/checkout@v2
+      with:
+        repository: revyos/revyos
+        path: revyos
+
+    - name: Checkout revyos/.github repository
+      uses: actions/checkout@v2
+      with:
+        repository: KamijoToma/revyos-github
+        path: .github
+
+    - name: Replace relative links in README.md
+      run: |
+        sed -i 's|\(\[[^]]*\]\)(\(\./[^)]*\))|\1(https://github.com/revyos/revyos/blob/main/\2)|g' revyos/README.md
+
+    - name: Copy updated README.md to .github repository
+      run: |
+        cp revyos/README.md .github/profile/README.md
+
+    - name: Commit and push changes
+      run: |
+        cd .github
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add profile/README.md
+        git commit -m 'Update profile README.md with changes from revyos/revyos'
+        git push
